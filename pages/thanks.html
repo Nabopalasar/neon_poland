@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- ✅ Кодировка и адаптивность -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ SEO -->
+    <title>Dziękujemy! — Formularz wysłany</title>
+    <meta name="description" content="Dziękujemy za przesłanie formularza. Wkrótce się z Tobą skontaktujemy.">
+
+    <!-- ✅ Canonical (чтобы Google не считал дублем главной страницы) -->
+    <link rel="canonical" href="https://example.com/thanks.html">
+
+    <!-- ✅ Open Graph -->
+    <meta property="og:title" content="Dziękujemy za wiadomość!">
+    <meta property="og:description" content="Twoja wiadomość została wysłana pomyślnie.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/thanks.html">
+    <meta property="og:image" content="https://example.com/images/og-image.jpg">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- ✅ Twitter Card (можно убрать, если не используешь соцсети) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dziękujemy za wiadomość!">
+    <meta name="twitter:description" content="Twoja wiadomość została wysłana pomyślnie.">
+    <meta name="twitter:image" content="https://example.com/images/og-image.jpg">
+
+    <!-- ✅ Favicon и иконки -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- ✅ Цвет темы -->
+    <meta name="theme-color" content="#000000">
+
+    <!-- ✅ Основной CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- ✅ (Опционально) Отслеживание конверсий -->
+    <!-- Пример: Google Analytics / Meta Pixel -->
+    <!-- <script>/* Код аналитики сюда */</script> -->
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="images/logo.svg" alt="Logo firmy">
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="thank-you">
+        <section class="thank-you__content container">
+            <h1 class="thank-you__title">Dziękujemy za wiadomość!</h1>
+            <p class="thank-you__text">
+                Twoja wiadomość została wysłana pomyślnie.<br>
+                Wkrótce się z Tobą skontaktujemy.
+            </p>
+
+            <!-- CTA — кнопка возврата -->
+            <a href="/" class="btn btn--primary">Wróć na stronę główną</a>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p>&copy; <span id="year"></span> Nazwa firmy. Wszelkie prawa zastrzeżone.</p>
+            <nav class="footer__nav">
+                <a href="/privacy.html">Polityka prywatności</a>
+                <a href="/regulamin.html">Regulamin</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Автоматическое обновление года в футере
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
