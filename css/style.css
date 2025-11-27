@@ -73,11 +73,26 @@ section {
     vertical-align: middle;
 }
 
+.slide-item {
+    position: relative;
+}
 
 .slide-item img {
     height: 400px;
     width: 100%;
 }
+
+.slide-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25%;
+    margin: 0 auto;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    width: 80%;
+    max-width: 350px;
+  }
 
 body {
     font-family: "Nunito Sans", sans-serif;
@@ -707,6 +722,51 @@ input, textarea {
     0%, 45%   { opacity: 0; }
     50%, 95%  { opacity: 1; }
     100%      { opacity: 0; }
+  }
+
+  .faq {
+    font-family: Inter, system-ui, sans-serif;
+    color: #e6eef6;
+  }
+  
+  .faq-item {
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #111318;
+  }
+  
+  /* кнопка-вопрос */
+  .faq-question {
+    width: 100%;
+    padding: 14px 16px;
+    background: #15181d;
+    color: #e6eef6;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  /* скрытый ответ */
+  .faq-answer {
+    display: none;
+    padding: 12px 16px;
+    background: #0f1114;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  
+  /* актив */
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+  
+  .faq-item.active .faq-question {
+    background: #00ffd5;
+    color: #000;
   }
 
 
