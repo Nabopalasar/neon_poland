@@ -95,6 +95,8 @@ const offerSwiper = new Swiper('.offer-slider', {
 const header = document.querySelector("header");
 const headerHeight = header.offsetHeight;
 const navMenu = document.querySelector(".nav-menu")
+const navLink = navMenu.querySelectorAll('a');
+const menuLines = document.querySelector(".burger").querySelectorAll("span");
 
 // 1. Плавный скролл + правильный отступ под фиксированный хедер
 document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -119,9 +121,15 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 1) {
     header.classList.add("scrolled");
     navMenu.classList.add("scrolled");
+    navLink.forEach(item => item.classList.add("scrolled"));
+    menuLines.forEach(item => item.classList.add("scrolled"));
   } else {
     header.classList.remove("scrolled");
     navMenu.classList.remove("scrolled");
+    navLink.forEach(item => item.classList.remove("scrolled"));
+    menuLines.forEach(item => item.classList.remove("scrolled"));
+
+
   }
 });
 

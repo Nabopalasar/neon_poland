@@ -31,6 +31,10 @@ button {
     z-index: 2;
 }
 
+.calculator__previev-text-inner {
+ font-size: 40px;
+}
+
 .calculator__previev-text-inner.substrate {
     padding: 15px 30px;
     display: inline;

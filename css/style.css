@@ -86,12 +86,16 @@ section {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 25%;
+    bottom: 5%;
     margin: 0 auto;
     text-align: center;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     width: 80%;
     max-width: 350px;
+  }
+
+  .slide-text_hero {
+    bottom: 20%;
   }
 
 body {
@@ -108,7 +112,7 @@ main {
 .offer-slider,
 .hero-slider {
     width: 100%;
-    padding: 0 40px; /* контролирует насколько видны боковые */
+    padding: 0 10px; /* контролирует насколько видны боковые */
     flex: .8;
     margin-bottom: var(--margin-base);
 }
@@ -217,7 +221,9 @@ header {
 }
 
 header.scrolled {
-    background-color: var(--header-bg);
+    /* background-color: var(--header-bg); */
+    background-color: #fff;
+    color: #000;
 }
 
 :root {
@@ -293,9 +299,13 @@ header.scrolled {
 
 
 .nav-menu a {
-    font-size: 14px;
+    font-size: 12px;
     transition: color 0.2s ease;
     font-weight: 500;
+}
+
+.nav-menu a.scrolled {
+    color: #000;
 }
 
 .nav-menu a:hover {
@@ -322,6 +332,10 @@ header.scrolled {
     background: #fff;
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+
+.burger span.scrolled {
+    background: #000;
 }
 
 .nav-menu {
@@ -351,7 +365,8 @@ header.scrolled {
 }
 
 .nav-menu.active.scrolled {
-    background-color: var(--header-bg);
+    /* background-color: var(--header-bg); */
+    background-color: #fff;
 }
 
 
@@ -669,21 +684,21 @@ input, textarea {
   .icon {
     position: absolute;
     transition: opacity 0.6s ease;
-    animation: ring 2s infinite;
+    animation: ring 1.5s infinite;
   }
   
   /* Телефон */
   .phone {
-    animation: swapPhone 10s infinite, ring 2s infinite;
+    animation: swapPhone 10s infinite, ring 1.5s infinite;
   }
   
   /* Конверт */
   .mail {
-    animation: swapMail 10s infinite, ring 2s infinite;
+    animation: swapMail 10s infinite, ring 1.5s infinite;
   }
 
   .gift {
-    animation: ring 2s infinite;
+    animation: ring 1s infinite;
   }
   
   /* Анимация звонка */
@@ -785,6 +800,10 @@ input, textarea {
         opacity: 1;
         pointer-events: auto;
         background: transparent;
+    }
+
+    .nav-menu a {
+        font-size: 16px;
     }
 
     .services-items {
