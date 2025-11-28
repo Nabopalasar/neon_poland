@@ -785,6 +785,13 @@ input, textarea {
   }
 
 
+  .gmap {
+    width: 100%;
+  }
+
+  .youtube {
+    height: 600px;
+  }
 /* ==============================
     🔹 Desktop styles
 ============================== */
@@ -838,8 +845,9 @@ input, textarea {
         font-size: 20px;
     }
 
-    .video {
+    .youtube {
         width: 700px;
+        height: 350px;
     }
 
     section {
