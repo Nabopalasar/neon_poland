@@ -221,9 +221,9 @@ header {
 }
 
 header.scrolled {
-    /* background-color: var(--header-bg); */
-    background-color: #fff;
-    color: #000;
+    background-color: var(--header-bg);
+    /* background-color: #fff; */
+    /* color: #000; */
 }
 
 :root {
@@ -304,10 +304,6 @@ header.scrolled {
     font-weight: 500;
 }
 
-.nav-menu a.scrolled {
-    color: #000;
-}
-
 .nav-menu a:hover {
     color: var(--primary-color);
 }
@@ -334,16 +330,13 @@ header.scrolled {
     transition: all 0.3s ease;
 }
 
-.burger span.scrolled {
-    background: #000;
-}
 
 .nav-menu {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    /* background: var(--header-bg); */
+    background: var(--header-bg);
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -365,8 +358,8 @@ header.scrolled {
 }
 
 .nav-menu.active.scrolled {
-    /* background-color: var(--header-bg); */
-    background-color: #fff;
+    background-color: var(--header-bg);
+    /* background-color: #fff; */
 }
 
 
