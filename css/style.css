@@ -791,6 +791,7 @@ input, textarea {
 
   .youtube {
     height: 600px;
+    border: none;
   }
 /* ==============================
     🔹 Desktop styles
