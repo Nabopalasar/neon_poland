@@ -34,69 +34,85 @@ document.addEventListener('click', (e) => {
 
 // MARQUE
 document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.marquee-track');
-    const group = track?.querySelector('.marquee-group');
-    if (track && group) {
-      const clone = group.cloneNode(true); // клонируем элементы, а не текст
-      track.appendChild(clone);
-    }
-  });
+  const track = document.querySelector('.marquee-track');
+  const group = track?.querySelector('.marquee-group');
+  if (track && group) {
+    const clone = group.cloneNode(true); // клонируем элементы, а не текст
+    track.appendChild(clone);
+  }
+});
 
 //SLIDERS
 
 const heroSwiper = new Swiper('.hero-slider', {
-    loop: true,
-    speed: 800,
-    centeredSlides: true,
+  loop: true,
+  speed: 800,
+  centeredSlides: true,
 
-    slidesPerView: 1.3,  // показывает центр + боковые куски
-    spaceBetween: 20,
+  slidesPerView: 1.3,  // показывает центр + боковые куски
+  spaceBetween: 20,
 
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 1.6,
     },
-
-    breakpoints: {
-        768: {
-            slidesPerView: 1.6,
-        },
-        1024: {
-            slidesPerView: 1.9,
-        }
+    1024: {
+      slidesPerView: 1.9,
     }
+  }
 });
 
 const offerSwiper = new Swiper('.offer-slider', {
-    loop: true,
-    speed: 800,
-    centeredSlides: true,
+  loop: true,
+  speed: 800,
+  centeredSlides: true,
 
-    slidesPerView: 1.3,  // показывает центр + боковые куски
-    spaceBetween: 20,
+  slidesPerView: 1.3,  // показывает центр + боковые куски
+  spaceBetween: 20,
 
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 1.6,
     },
-
-    breakpoints: {
-        768: {
-            slidesPerView: 1.6,
-        },
-        1024: {
-            slidesPerView: 1.9,
-        }
+    1024: {
+      slidesPerView: 1.9,
     }
+  }
+});
+
+const reviewsSwiper = new Swiper('.reviews-swiper', {
+  loop: true,
+  spaceBetween: 20,
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
 });
 
 //NAV
 
 const header = document.querySelector("header");
 const headerHeight = header.offsetHeight;
-const navMenu = document.querySelector(".nav-menu")
-const navLink = navMenu.querySelectorAll('a');
-const menuLines = document.querySelector(".burger").querySelectorAll("span");
+const navMenu = document.querySelector(".nav-menu");
 
 // 1. Плавный скролл + правильный отступ под фиксированный хедер
 document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -121,15 +137,9 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 1) {
     header.classList.add("scrolled");
     navMenu.classList.add("scrolled");
-    navLink.forEach(item => item.classList.add("scrolled"));
-    menuLines.forEach(item => item.classList.add("scrolled"));
   } else {
     header.classList.remove("scrolled");
     navMenu.classList.remove("scrolled");
-    navLink.forEach(item => item.classList.remove("scrolled"));
-    menuLines.forEach(item => item.classList.remove("scrolled"));
-
-
   }
 });
 
@@ -150,56 +160,56 @@ const errorBlock = form.querySelector('.form-error');
 
 // открыть popup1 с нужным заголовком
 buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const title = btn.dataset.title;
-        titleEl.textContent = title;
-        serviceInput.value = title;
+  btn.addEventListener('click', () => {
+    const title = btn.dataset.title;
+    titleEl.textContent = title;
+    serviceInput.value = title;
 
-        popup1.style.display = 'flex';
-    });
+    popup1.style.display = 'flex';
+  });
 });
 
 // закрытие по крестику
 closes.forEach(c => {
-    c.addEventListener('click', () => {
-        popup1.style.display = 'none';
-        popup2.style.display = 'none';
-    });
+  c.addEventListener('click', () => {
+    popup1.style.display = 'none';
+    popup2.style.display = 'none';
+  });
 });
 
 // закрытие по подложке
 document.addEventListener('click', e => {
-    if (e.target.classList.contains('popup-overlay')) {
-        popup1.style.display = 'none';
-        popup2.style.display = 'none';
-    }
+  if (e.target.classList.contains('popup-overlay')) {
+    popup1.style.display = 'none';
+    popup2.style.display = 'none';
+  }
 });
 
 // кнопка "Оставить заявку"
 nextBtn.addEventListener('click', () => {
-    popup1.style.display = 'none';
-    popup2.style.display = 'flex';
+  popup1.style.display = 'none';
+  popup2.style.display = 'flex';
 });
 
 // кнопка "Назад"
 backBtn.addEventListener('click', () => {
-    popup2.style.display = 'none';
-    popup1.style.display = 'flex';
+  popup2.style.display = 'none';
+  popup1.style.display = 'flex';
 });
 
 // Проверка формы перед отправкой
 form.addEventListener('submit', e => {
-    const fields = form.querySelectorAll('input, textarea');
+  const fields = form.querySelectorAll('input, textarea');
 
-    for (let f of fields) {
-        if (f.value.trim() === "") {
-            e.preventDefault();
-            errorBlock.style.display = 'block';
-            return;
-        }
+  for (let f of fields) {
+    if (f.value.trim() === "") {
+      e.preventDefault();
+      errorBlock.style.display = 'block';
+      return;
     }
+  }
 
-    errorBlock.style.display = 'none';
+  errorBlock.style.display = 'none';
 });
 
 
@@ -210,24 +220,24 @@ form.addEventListener('submit', e => {
 const phoneInput = document.querySelector('input[name="phone"]');
 
 phoneInput.addEventListener('input', (e) => {
-    let value = e.target.value.replace(/\D/g, ""); // удалить все НЕ цифры
+  let value = e.target.value.replace(/\D/g, ""); // удалить все НЕ цифры
 
-    // автодобавление кода страны
-    if (!value.startsWith("48")) {
-        value = "48" + value;
-    }
+  // автодобавление кода страны
+  if (!value.startsWith("48")) {
+    value = "48" + value;
+  }
 
-    // ограничиваем длину (48 + 9 цифр = 11 цифр)
-    value = value.substring(0, 11);
+  // ограничиваем длину (48 + 9 цифр = 11 цифр)
+  value = value.substring(0, 11);
 
-    // форматирование
-    let formatted = "+";
-    if (value.length >= 2) formatted += value.substring(0, 2);           // 48
-    if (value.length >= 3) formatted += " " + value.substring(2, 5);     // 123
-    if (value.length >= 6) formatted += " " + value.substring(5, 8);     // 456
-    if (value.length >= 9) formatted += " " + value.substring(8, 11);    // 789
+  // форматирование
+  let formatted = "+";
+  if (value.length >= 2) formatted += value.substring(0, 2);           // 48
+  if (value.length >= 3) formatted += " " + value.substring(2, 5);     // 123
+  if (value.length >= 6) formatted += " " + value.substring(5, 8);     // 456
+  if (value.length >= 9) formatted += " " + value.substring(8, 11);    // 789
 
-    e.target.value = formatted;
+  e.target.value = formatted;
 });
 
 

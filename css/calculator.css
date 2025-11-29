@@ -194,7 +194,7 @@ button {
     transform: scale(0.7);
     width: 80px;
     height: 80px;
-    background-image: url('/img/calculator/darck.png');
+    background-image: url('../img/calculator/darck.png');
     background-color: #232323;
     background-position: center center;
     background-size: 70px 70px;
@@ -209,7 +209,7 @@ button {
     transform: scale(0.7);
     width: 80px;
     height: 80px;
-    background-image: url('/img/calculator/light.png');
+    background-image: url('../img/calculator/light.png');
     background-color: #232323;
     background-position: center center;
     background-size: 78px 78px;

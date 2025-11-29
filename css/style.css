@@ -521,6 +521,10 @@ footer {
     position: relative;
 }
 
+.popup-title {
+    margin-bottom: var(--margin-base);
+}
+
 .close {
     position: absolute;
     right: 15px;
@@ -786,6 +790,89 @@ input, textarea {
     height: 600px;
     border: none;
   }
+
+  .ig-gradient-text {
+    /* Instagram gradient */
+    --ig-start: #f58529;
+    --ig-mid1: #dd2a7b;
+    --ig-mid2: #8134af;
+    --ig-end: #515bd4;
+  
+    display: block;
+    align-items: center;
+    background: linear-gradient(90deg, var(--ig-start), var(--ig-mid1), var(--ig-mid2), var(--ig-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Safari, Chrome */
+    color: var(--ig-end); /* fallback for very old browsers */
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Katherine Plus', sans-serif;
+
+  }
+
+  .ig-gradient-text img {
+    height: 15px;
+  }
+
+  .ig-gradient-text span {
+    margin-right: var(--margin-base);
+  }
+
+  .reviews-swiper {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .review-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    background: #ffffff2e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    /* box-shadow: 0 0 15px rgba(255, 0, 255, 0.2); */
+  }
+  
+  .review-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    font-weight: bold;
+  }
+
+  .review-stars {
+    color: yellow;
+    margin-bottom: 16px;
+  }
+
+  .review-ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+  }
+
+  .sr-pagination {
+   bottom: 0!important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #616161;
+  }
+  
 /* ==============================
     🔹 Desktop styles
 ============================== */
